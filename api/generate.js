@@ -137,9 +137,21 @@ status: 200,
 headers: { 'Content-Type': 'application/json', ...corsHeaders(allowOrigin) },
 });
 } catch (err) {
-return new Response(JSON.stringify({ error: err.message || 'Unknown error' }), {
-status: 500,
-});
+  const origin = req.headers.get('origin') || '';
+  const allowOrigin = ALLOWED_ORIGINS.includes(origin) ? origin : ALLOWED_ORIGINS[0];
+
+  return new Response(
+    JSON.stringify({ error: err.message || 'Unknown error' }),
+    {
+      status: 500,
+      headers: {
+        'Content-Type': 'application/json',
+        ...corsHeaders(allowOrigin),
+      },
+    }
+  );
+}
 }
 
 }
+
