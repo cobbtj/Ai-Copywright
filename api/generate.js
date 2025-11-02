@@ -1,5 +1,4 @@
 // api/generate.js — Vercel Serverless Function
-// Keeps your OpenAI key private. Never expose it in the browser.
 
 
 export const config = {
@@ -8,9 +7,11 @@ runtime: 'edge', // fast, low-cold-start
 
 
 const ALLOWED_ORIGINS = [
-'https://tyler-cobb-portfolio.netlify.app', // your portfolio site
-'http://localhost:5173', // local dev (Vite default)
+  'https://ai-copywright.netlify.app',   
+  'https://tyler-cobb-portfolio.netlify.app',
+  'http://localhost:5173',
 ];
+
 
 
 // Simple per-request guardrails
@@ -140,4 +141,5 @@ return new Response(JSON.stringify({ error: err.message || 'Unknown error' }), {
 status: 500,
 });
 }
+
 }
