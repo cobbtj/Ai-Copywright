@@ -5,7 +5,9 @@ import OutputPanel from './components/OutputPanel';
 import './index.css';
 
 
-const API_URL = '/api/generate'; // Vercel maps this to api/generate.js
+const API_URL = import.meta.env.PROD
+  ? 'https://ai-copywright.vercel.app.vercel.app/api/generate'
+  : '/api/generate';
 
 
 export default function App() {
