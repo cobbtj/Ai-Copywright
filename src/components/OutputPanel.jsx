@@ -1,3 +1,5 @@
+import React from 'react';
+
 export default function OutputPanel({ text, onAction, pending, lastParams }) {
 async function copy() {
 if (!text) return;
@@ -21,4 +23,5 @@ return (
 <pre className="result" aria-live="polite">{text || 'Your generated copy will appear here.'}</pre>
 </div>
 );
+
 }
