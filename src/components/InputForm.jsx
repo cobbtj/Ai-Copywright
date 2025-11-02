@@ -1,3 +1,4 @@
+import React from 'react';
 import { useState } from 'react';
 import { CONTENT_TYPES, TONES } from '../lib/presets';
 
@@ -65,4 +66,5 @@ placeholder="budget, subway, pizza"
 </button>
 </form>
 );
+
 }
