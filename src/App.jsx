@@ -1,3 +1,4 @@
+import React from 'react';
 import { useState } from 'react';
 import InputForm from './components/InputForm';
 import OutputPanel from './components/OutputPanel';
