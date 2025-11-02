@@ -6,7 +6,7 @@ import './index.css';
 
 
 const API_URL = import.meta.env.PROD
-  ? 'https://ai-copywright.vercel.app.vercel.app/api/generate'
+  ? 'https://ai-copywright.vercel.app/api/generate'
   : '/api/generate';
 
 
